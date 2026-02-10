@@ -1,0 +1,831 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.hero-title {
+    text-align: center;
+}
+
+.hero-title-text {
+    color: white;
+    font-size: 180px;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.8),
+        0 0 60px rgba(0, 0, 0, 0.6);
+}
+
+.hero-info {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.hero-info-text {
+    color: white;
+    font-weight: 450;
+    font-size: 23px;
+    text-align: start;
+    text-shadow: 0 0 100px rgba(0, 0, 0, 1),
+        0 0 120px rgba(0, 0, 0, 0.8);
+}
+
+.phoenix-highlight {
+    font-weight: 700;
+}
+
+/* Раздел статей */
+.articles {
+    padding: 100px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.articles-title {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.articles-title-text {
+    color: white;
+    font-size: 55px;
+    font-weight: bold;
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.articles-title-text:hover {
+    color: rgb(255, 183, 94);
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.article-card {
+    background: rgba(41, 41, 41, 0.8);
+    border: 2px solid rgb(75, 75, 75);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    border-color: rgb(120, 120, 120);
+    background: rgba(51, 51, 51, 0.9);
+}
+
+.article-header {
+    margin-bottom: 20px;
+}
+
+.article-header svg {
+    width: 40px;
+    height: 40px;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 2;
+}
+
+.article-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+
+.article-excerpt {
+    color: rgb(200, 200, 200);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+}
+
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.article-date,
+.article-read-time {
+    color: rgb(150, 150, 150);
+    font-size: 14px;
+}
+
+.article-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgb(66, 66, 66);
+    border-radius: 50px;
+    padding: 12px 24px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+}
+
+.article-link:hover {
+    color: black;
+    background-color: white;
+}
+
+.article-link svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease;
+}
+
+.article-link:hover svg {
+    transform: translateX(5px);
+}
+
+/* Адаптив для планшетов */
+@media (max-width: 768px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .articles-title-text {
+        font-size: 40px;
+    }
+}
+
+/* Адаптив для мобилок */
+@media (max-width: 480px) {
+    .articles {
+        padding: 60px 15px;
+    }
+
+    .article-card {
+        padding: 20px;
+    }
+
+    .article-title {
+        font-size: 20px;
+    }
+}
+
+.facts {
+    padding: 100px 20px;
+}
+
+.facts-title {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.facts-title-text {
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.facts-title-text:hover {
+    color: rgb(255, 183, 94);
+}
+
+.fact-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.fact-card {
+    background: rgba(41, 41, 41, 0.8);
+    border: 2px solid rgb(75, 75, 75);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.fact-card:hover {
+    transform: translateY(-10px);
+    border-color: rgb(120, 120, 120);
+}
+
+.fact-icon {
+    margin-bottom: 20px;
+}
+
+.fact-icon svg {
+    width: 50px;
+    height: 50px;
+    stroke: white;
+    stroke-width: 2;
+}
+
+.fact-value {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.fact-label {
+    color: rgb(200, 200, 200);
+    font-size: 18px;
+    margin: 0;
+}
+
+.gallery {
+    padding-bottom: 60px;
+    padding: 30px;
+}
+
+.gallery-title {
+    text-align: center;
+    padding: 30px;
+}
+
+.gallery-title-text {
+    color: white;
+    font-size: 55px;
+    font-weight: bold;
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.gallery-title-text:hover {
+    color: rgb(255, 183, 94);
+}
+
+.gallery-images {
+    text-align: center;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: repeat(9, 1fr);
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 20px;
+}
+
+.gallery-image {
+    width: 280px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: solid 2px rgb(77, 77, 77);
+    transition: transform 0.2s ease-in;
+}
+
+.gallery-image:hover {
+    transform: translateY(-10px);
+    border-color: rgb(120, 120, 120);
+}
+
+.size {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    gap: 20px;
+    padding: 20px;
+    flex-direction: row;
+}
+
+.size-img {
+
+    text-align: center;
+    gap: 20px;
+}
+
+.size-text {
+
+    font-size: 54px;
+    color: white;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.8),
+        0 0 60px rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+
+}
+
+.main-size a:hover {
+    color: black;
+    background-color: white;
+
+}
+
+.hole {
+    /* border-radius: 1000px; */
+    width: 1000px;
+    height: 500px;
+
+}
+
+.sun {
+    width: 100px;
+    height: 100px;
+
+}
+
+.main-size {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.size-text span {
+    color: rgb(255, 154, 31);
+}
+
+.main-size a {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 28px;
+    background-color: rgb(66, 66, 66);
+    border-radius: 50px;
+    padding: 20px 0;
+    margin: 0;
+    transition: color 0.2 ease-in;
+    transition: background-color 0.2s ease-in;
+}
+
+.more-title {
+    text-align: center;
+    padding-bottom: 40px;
+    transition: color 0.3s ease-in-out;
+
+}
+
+
+
+.more-title-text {
+    font-size: 55px;
+    text-shadow: 0 0 100px rgba(0, 0, 0, 1),
+        0 0 120px rgba(0, 0, 0, 0.8);
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.more-title-text:hover {
+    color: rgb(255, 183, 94);
+}
+
+.more-cards {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 70px;
+
+}
+
+.card {
+    margin: 0 30px;
+    box-shadow: 5px 10px 100px black;
+    border-radius: 10px;
+    background-color: rgb(41, 41, 41);
+    padding-bottom: 10px;
+    border: 2px solid rgb(53, 53, 53);
+    transition: transform 0.3s ease-in;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: rgb(120, 120, 120);
+}
+
+.card-image {
+    object-fit: cover;
+    width: 380px;
+    height: 260px;
+    border-radius: 10px 10px 0 0;
+
+}
+
+.more {
+    padding-top: 20px;
+}
+
+.card-content {
+    padding: 10px 15px;
+}
+
+.card-title {
+    text-align: start;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card-info {
+    width: 300px;
+    color: white;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.card-action {
+    text-align: center;
+}
+
+.card-link {
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    background-color: rgb(66, 66, 66);
+    border-radius: 50px;
+    padding: 10px 10px;
+    margin: 0;
+    transition: color 0.2 ease-in;
+    transition: background-color 0.2s ease-in;
+}
+
+.card-link:hover {
+    color: black;
+    background-color: white;
+
+}
+
+.FAQ-container {
+    padding: 3px 0;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)); 
+
+}
+
+.questions {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.question-text{
+    display: inline;
+}
+
+/* .question-img{
+    display: inline;
+    margin-left: 95%;
+} */
+
+.faq-item{
+    background-color: rgb(66, 66, 66);
+    border-radius: 20px;
+    padding: 15px 30px;
+}
+
+.question{
+    background-color: rgb(66, 66, 66);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.question-text{
+    color: white;
+    font-size: 30px;
+    font-weight: 650;
+    /* background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)); */
+    
+}
+
+.FAQ-text {
+    font-size: 55px;
+    text-align: center;
+    text-shadow: 0 0 100px rgba(0, 0, 0, 1),
+        0 0 120px rgba(0, 0, 0, 0.8);
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.FAQ-container svg{
+    width: 40px;
+    height: 40px;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+.detail-button-container{
+    text-align: right;
+}
+
+.detail-button{
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    background-color: white;
+    border-radius: 50px;
+    padding: 15px 30px;
+    margin: 0;
+    transition: color 0.2 ease-in;
+    transition: background-color 0.2s ease-in;
+    display: inline-block;
+}
+
+.answer{
+    padding-top: 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: 450;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.open{
+    max-height: 500px;
+}
+
+/* старые пк (768px - 1024px) */
+@media (max-width: 1024px) {
+    .hero-title-text {
+        font-size: 120px;
+    }
+
+    .hero-info {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .hero-info-text {
+        font-size: 20px;
+    }
+
+    .articles-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .fact-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .gallery-images {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: 350px;
+    }
+
+    .more-cards {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .card {
+        margin: 0;
+    }
+
+    .item-text-main {
+        font-size: 20px;
+        margin: 12px 15px;
+    }
+
+    .item-text-main:last-child {
+        margin-right: 15px;
+    }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+    .hero-title-text {
+        font-size: 80px;
+    }
+
+    .hero-info {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    .hero-info-text {
+        font-size: 18px;
+    }
+
+    .articles {
+        padding: 60px 15px;
+    }
+
+    .articles-title-text,
+    .facts-title-text,
+    .gallery-title-text,
+    .more-title-text,
+    .FAQ-text {
+        font-size: 40px;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .article-card {
+        padding: 25px;
+    }
+
+    .fact-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .fact-card {
+        padding: 30px 20px;
+    }
+
+    .gallery-images {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: 300px;
+    }
+
+    .more-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .card-image {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .card-info {
+        width: 100%;
+    }
+
+    .question-text {
+        font-size: 22px;
+    }
+
+    .answer {
+        font-size: 18px;
+    }
+
+    /* Мобильное меню */
+    .items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item-text-main {
+        margin: 10px 0;
+        font-size: 22px;
+    }
+
+    .item-text-main:last-child {
+        margin-right: 0;
+    }
+
+    .icon {
+        right: 15px;
+        top: 12px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/*  телефочики (до 480px) */
+@media (max-width: 480px) {
+    .hero-title-text {
+        font-size: 50px;
+    }
+
+    .hero-info-text {
+        font-size: 16px;
+    }
+
+    .articles-title-text,
+    .facts-title-text,
+    .gallery-title-text,
+    .more-title-text,
+    .FAQ-text {
+        font-size: 32px;
+    }
+
+    .article-card {
+        padding: 20px;
+    }
+
+    .article-title {
+        font-size: 20px;
+    }
+
+    .article-excerpt {
+        font-size: 15px;
+    }
+
+    .fact-value {
+        font-size: 28px;
+    }
+
+    .fact-label {
+        font-size: 16px;
+    }
+
+    .gallery-image {
+        height: 250px;
+    }
+
+    .question-text {
+        font-size: 18px;
+    }
+
+    .answer {
+        font-size: 16px;
+    }
+
+    .FAQ-container svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .detail-button {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .card-link {
+        font-size: 18px;
+    }
+
+    .item-text-main {
+        font-size: 18px;
+    }
+}
+@media (hover: none) and (pointer: coarse) {
+    .article-link,
+    .card-link,
+    .detail-button {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+
+    .question {
+        padding: 5px 0;
+    }
+
+    .FAQ-container svg {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+
+    .hero-title-text {
+        font-size: 60px;
+    }
+}
