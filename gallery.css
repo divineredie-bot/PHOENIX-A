@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: black;
+    padding: 20px;
+}
+
+.gallery {
+    padding-bottom: 60px;
+}
+
+.gallery-title {
+    text-align: center;
+    padding: 30px;
+}
+
+.gallery-title-text {
+    color: white;
+    font-size: 55px;
+    font-weight: bold;
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.gallery-title-text:hover {
+    color: rgb(255, 183, 94);
+}
+
+.gallery-images {
+    padding: 30px;
+    text-align: center;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-image {
+    width: 450px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: solid 2px rgb(77, 77, 77);
+    transition: transform 0.2s ease-in;
+}
+
+.gallery-image:hover {
+    transform: translateY(-10px);
+    border-color: rgb(120, 120, 120);
+}
+
+
+svg{
+    
+    stroke: white;
+    width: 50px;
+    height: 50px;
+
+}
+
+/* ========== АДАПТИВНЫЕ СТИЛИ ========== */
+
+/* Средние экраны и планшеты (1024px - 1400px) */
+@media (max-width: 1400px) {
+    .gallery-images {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .gallery-image {
+        height: 350px;
+        width: 300px;
+        
+    }
+}
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+    body {
+        padding: 15px;
+    }
+
+    .gallery-title-text {
+        font-size: 45px;
+    }
+
+    .gallery-title {
+        padding: 25px;
+    }
+
+    .gallery-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .gallery-image {
+        height: 320px;
+    }
+
+    svg {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .gallery {
+        padding-bottom: 40px;
+    }
+
+    .gallery-title {
+        padding: 20px 10px;
+    }
+
+    .gallery-title-text {
+        font-size: 40px;
+    }
+
+    .gallery-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .gallery-image {
+        height: 250px;
+        border-radius: 20px;
+    }
+
+    svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    #left {
+        margin-bottom: 15px;
+    }
+}
+
+/* Маленькие мобильные (до 600px) */
+@media (max-width: 600px) {
+    .gallery-title-text {
+        font-size: 35px;
+    }
+
+    .gallery-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .gallery-image {
+        height: 200px;
+        border-radius: 15px;
+    }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    .gallery-title {
+        padding: 15px 5px;
+    }
+
+    .gallery-title-text {
+        font-size: 32px;
+    }
+
+    .gallery-images {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .gallery-image {
+        height: 280px;
+        max-width: 100%;
+    }
+
+    svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    #left {
+        margin-bottom: 10px;
+    }
+}
+
+/* Очень маленькие экраны (до 380px) */
+@media (max-width: 380px) {
+    .gallery-title-text {
+        font-size: 28px;
+    }
+
+    .gallery-images {
+        gap: 12px;
+        padding: 8px;
+    }
+
+    .gallery-image {
+        height: 250px;
+        border-radius: 12px;
+    }
+
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Touch устройства */
+@media (hover: none) and (pointer: coarse) {
+    #left {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+
+    .gallery-image:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Ландшафтная ориентация для мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+    .gallery-title {
+        padding: 15px;
+    }
+
+    .gallery-title-text {
+        font-size: 35px;
+    }
+
+    .gallery-images {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .gallery-image {
+        height: 220px;
+    }
+}
+
+/* Оптимизация для малого ландшафта */
+@media (max-width: 480px) and (orientation: landscape) {
+    .gallery-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-image {
+        height: 180px;
+    }
+}
+
+/* вменьшение анимации для пользователей с настройками */
+@media (prefers-reduced-motion: reduce) {
+    .gallery-image,
+    #left {
+        transition: none;
+    }
+
+    .gallery-image:hover {
+        transform: none;
+    }
+
+    #left:hover {
+        transform: none;
+    }
+}

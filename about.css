@@ -1,0 +1,331 @@
+body{
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-size: 60px;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.text{
+    font-size: 25px;
+}
+
+.image img{
+    border-radius: 40px;
+}
+
+svg{
+    stroke: white;
+    width: 50px;
+    height: 50px;
+}
+
+footer{
+    padding-top: 50px;
+    text-align: center;
+}
+
+@media (max-width: 1300px){
+    .text{
+        font-size: 22px;
+}
+    .image img{
+    border-radius: 40px;
+    width: 411px;
+    height: 270px;
+}
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 35px;
+    }
+
+    .info {
+        gap: 25px;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+
+    .image img {
+        border-radius: 30px;
+        max-width: 500px;
+    }
+
+    svg {
+        width: 45px;
+        height: 45px;
+    }
+
+    footer {
+        padding-top: 40px;
+    }
+
+    footer p {
+        font-size: 15px;
+    }
+}
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    .info {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .text {
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .image img {
+        border-radius: 25px;
+        max-width: 100%;
+    }
+
+    svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    #left {
+        margin-bottom: 15px;
+    }
+
+    footer {
+        padding-top: 35px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+/* Маленькие мобильные (до 600px) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+
+    .image img {
+        border-radius: 20px;
+    }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+
+    .info {
+        gap: 25px;
+    }
+
+    .text {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .image img {
+        border-radius: 18px;
+    }
+
+    svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    #left {
+        margin-bottom: 12px;
+    }
+
+    footer {
+        padding-top: 30px;
+    }
+
+    footer p {
+        font-size: 13px;
+        margin: 8px 0;
+    }
+}
+
+/* Очень маленькие экраны (до 380px) */
+@media (max-width: 380px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .info {
+        gap: 20px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .image img {
+        border-radius: 15px;
+    }
+
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer {
+        padding-top: 25px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
+/* Touch устройства */
+@media (hover: none) and (pointer: coarse) {
+    #left {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+
+    .text {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .image img:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Ландшафтная опиентация для мобдльных */
+@media (max-width: 768px) and (orientation: landscape) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+
+    .info {
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .text {
+        font-size: 18px;
+        flex: 1.2;
+    }
+
+    .image {
+        flex: 0.8;
+    }
+
+    .image img {
+        max-width: 400px;
+    }
+
+    footer {
+        padding-top: 30px;
+    }
+}
+
+/* Ландшафтная ориентация для очrнь маленьких экранов */
+@media (max-width: 480px) and (orientation: landscape) {
+    .info {
+        flex-direction: column;
+    }
+
+    .image img {
+        max-width: 350px;
+    }
+}
+
+/* Высокие экраны  */
+@media (min-aspect-ratio: 1/2) {
+    .info {
+        margin-bottom: 60px;
+    }
+
+    footer {
+        padding-top: 60px;
+    }
+}
+
+/* eменьшение анимации */
+@media (prefers-reduced-motion: reduce) {
+    h1,
+    .image img,
+    #left {
+        transition: none;
+    }
+
+    h1:hover,
+    .image img:hover,
+    #left:hover {
+        transform: none;
+    }
+
+    .image img:active {
+        transform: none;
+    }
+}
+
+/* Улучшение читаемости на маленьких экранах */
+@media (max-width: 768px) {
+    .text {
+        text-align: left;
+        hyphens: auto;
+        word-wrap: break-word;
+    }
+}
